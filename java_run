@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+class_dir="./target/java/build"
+
+javac -source 8 -target 1.8 -d $class_dir "./java/*" > /dev/null 2>&1
+
+for class_file in "$class_dir"/*; do
+    java "-cp $class_dir" $(basename $class_file | sed 's/\.class$//')
+done
