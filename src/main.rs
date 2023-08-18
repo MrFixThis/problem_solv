@@ -4,6 +4,7 @@ use std::env;
 
 mod day1;
 mod day2;
+mod day3;
 
 #[rustfmt::skip]
 fn main() {
@@ -14,9 +15,11 @@ fn main() {
     }
     _ = args.next();
     match args.next() {
-        Some(d) => match d.parse::<i32>().unwrap() {
-            1 => day1::start(),
-            _ => todo!()
+        Some(d) => match d.as_str() {
+            "1" => day1::start(),
+            "2" => day2::start(),
+            "3" => day3::start(),
+            _ => unimplemented!("no more days, baddy")
         },
         None => panic!("a day must be specified!"),
     }

@@ -33,7 +33,8 @@ pub fn start() {
 
     // fibbo
     // function
-    println!("{}", fibo::fibo_fn(5));
+    let n = 7;
+    println!("fibo {n}: {}", fibo::fibo_fn(n));
 
     // iterator
     // for v in fibo::Fibbonaci::with_limit(30) {

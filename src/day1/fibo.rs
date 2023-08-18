@@ -50,19 +50,25 @@ impl Iterator for Fibbonaci {
 }
 
 pub fn fibo_fn(n: usize) -> usize {
-    if n <= 0 {
+    if n == 0 {
         return n;
     }
 
     let mut prev = 0;
     let mut curr = 1;
 
-    (2..=n).for_each(|_| {
-        println!("{curr}");
+    (2..n).for_each(|_| {
         let next = prev + curr;
         prev = curr;
         curr = next;
     });
 
     curr
+}
+
+pub fn fibo_fn_recur(n: usize) -> usize {
+    if n <= 1 {
+        return n;
+    }
+    fibo_fn_recur(n - 1) + fibo_fn_recur(n - 2)
 }
